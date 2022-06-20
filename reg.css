@@ -1,0 +1,72 @@
+h1 {
+  color: rgb(37, 26, 26);
+  text-align: center;
+}
+.add {
+  bottom: 100px;
+  text-align: center;
+}
+.logo {
+  height: 100px;
+  width: 100px;
+}
+.logo img {
+  height: 100%;
+  width: 100%;
+  object-fit: contain;
+}
+.record {
+  height: 600px;
+  width: 500px;
+  margin-left: 100px;
+  top: 100px;
+}
+.record video {
+  height: 100%;
+  width: 100%;
+}
+.contain {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.container {
+  width: 700px;
+  top: 300px;
+}
+.form {
+  border: 5px solid rgb(221, 227, 247);
+  margin-top: 40px;
+}
+table {
+  border-spacing: 15px;
+}
+
+.gendercontainer {
+  display: flex;
+  flex-direction: row;
+  padding: 4px;
+}
+.male {
+  margin: 5px;
+}
+.female {
+  margin: 5px;
+}
+.others {
+  margin: 5px;
+}
+.timeduration {
+  display: flex;
+  flex-direction: row;
+  padding: 4px;
+}
+.two {
+  margin: 5px;
+}
+.four {
+  margin: 5px;
+}
+.six {
+  margin: 5px;
+}

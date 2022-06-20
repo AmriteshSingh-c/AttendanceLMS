@@ -1,2 +1,1 @@
-# AttendanceLMS
-Attendance LMS 
+# attendance

@@ -9,4 +9,4 @@ while ($row = mysqli_fetch_assoc($country_data)) {
 
  // Option
  echo "<option value='" . $countryid . "'>" . $country_name . "</option>";
-}
+}?>

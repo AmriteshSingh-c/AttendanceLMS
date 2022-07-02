@@ -5,35 +5,7 @@
   <link rel="stylesheet" href="./reg.css">
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script type="text/javascript">
-    $(document).ready(function() {
-      $('#country').change(function() {
-        var stateid = $(this).val()
-
-        $.ajax({
-          url: 'getstates.php',
-          type: 'post',
-          data: {
-            state: stateid
-          },
-          dataType: 'json',
-          success: function(response) {
-            var len = response.length
-
-            $('#states').empty()
-            for (var i = 0; i < len; i++) {
-              var id = response[i]['id']
-              var name = response[i]['name']
-
-              $('#states').append(
-                "<option value='" + id + "'>" + name + '</option>'
-              )
-            }
-          },
-        })
-      })
-    })
-  </script>
+ 
 </head>
 
 
@@ -108,22 +80,51 @@
           <td> <label for="place">Choose your country:</label></td>
 
           <td>
-            <select id="country">
-              <option value="0">- Select -</option>
+            <select id="cntry">
+              <option value='0'>- Select -</option>
+  
               <?php
               include "getcountry.php"
-              ?>
+              ?> </select>
           </td>
         </tr>
+ 
         <tr>
           <td> <label for="place">Choose your state:</label></td>
 
           <td>
-            <select id="states">
-              <option value="0">- Select -</option>
-              <?php
-              include "getstates.php"
-              ?>
+            <select id="state">
+              <option value='0'>- Select -</option>
+            
+                </select>
+                <script type="text/javascript">
+    $(document).ready(function() {
+      $('#cntry').change(function() {
+        var stateid = $(this).val();
+
+        $.ajax({
+          url: 'getstates.php',
+          type: 'post',
+          data: {
+            st: stateid
+          },
+          dataType: 'json',
+          success: function(response) {
+            var len = response.length;
+
+            $("#state").empty();
+            for (var i = 0; i < len; i++) {
+              var id = response[i]['Country_code']
+              var name = response[i]['state_name']
+
+              $("#state").append("<option value='" + id + "'>" + name + "</option>");
+              
+            }
+          }
+        });
+      });
+    });
+  </script>
           </td>
         </tr>
 
@@ -147,7 +148,7 @@
 
 
     </form>
-  </div>
+  </div> 
 </body>
 
 </html>
